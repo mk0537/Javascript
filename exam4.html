@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exam4</title>
+    <script>
+        // 원의 넓이를 구하는 circleArea 함수 만들기
+        // 원의 둘레를 구하는 circleRound 함수 만들기
+        // circleArea는 함수 안에서 출력하고 마무리
+        // circleRound는 둘레 반환하기
+        // 원의 넓이 : 반지름 * 반지름 * 3.14
+        // 원의 둘레 : 2 * 반지름 * 3.14
+
+        function circleArea (a) {
+            let area = a * a * 3.14;
+            document.write(`원의 넓이 : ${area}cm<sup>2</sup> <br>`);
+        }
+
+        circleArea(3);
+
+        function circleRound (b) {
+            let round = 2 * b * 3.14;
+            return round;
+        }
+
+        document.write(`원의 둘레 : ${circleRound(3)}cm <br>`);
+
+
+        document.write("<hr>")
+
+
+        // 사칙연산을 하는 arithmetic 함수 만들기
+        // 두 숫자의 덧셈, 뺄셈, 곱셈, 나눗셈을 구하세요
+        // 구하여 출력하시오
+
+        function arithmetic (a, b) {
+            let add = a + b;
+            let minus = a - b;
+            let multi = a * b;
+            let divid = a / b;
+            document.write(`두 수 더하기 : ${add}<br>
+                            두 수 빼기 : ${minus}<br>
+                            두 수 곱하기 : ${multi}<br>
+                            두 수 나누기 : ${divid}<br> `);
+        }
+
+        arithmetic(28,4);
+
+
+        
+        document.write("<hr>")
+
+
+
+        // fToc 함수를 만들어서 화씨 -> 섭씨 출력하기
+        // cTof 함수를 만들어서 섭씨 -> 화씨 출력하기
+        // 화씨 -> 섭씨 : (화씨 - 32) / 1.8
+        // 섭씨 -> 화씨 : 1.8 * 섭씨 + 32
+
+
+        function fToc (f) {
+            let F = (f - 32) / 1.8;
+            document.write(`화씨 : ${f}, 바뀐 섭씨 온도 : ${F} <br>`)
+        }
+
+        fToc(6)
+
+
+        function cTof (c) {
+            let C = 1.8 * c + 32;
+            return C;
+        }
+
+        document.write(`바뀐 화씨 온도 : ${cTof(4)} <br>`)
+
+
+        document.write("<hr>")
+
+
+        // 1 ~ 9 사이의 정수를 전달하여 해당 구구단을 출력하는 showTable 함수
+        // 를 만들어서 화면에 출력하기
+
+        function showTable (x) {
+            let dan = x; // 단수를 담을 변수 
+            for(let i = 1; i < 10; i++) {
+            document.write(`${dan}X${i}=${dan*i}<br>`)
+        }
+
+        }
+        
+        showTable(5)
+
+
+        document.write("<hr>")
+
+
+        // 매개변수로 임의의 숫자를 전달하여 1 ~ N 까지의 총합을 구하는
+        // total 함수를 만들고 값을 반환하여 화면에 출력하기
+
+        function total (n) {
+            let sum = 0 // 총합을 담을 변수
+            for(let i = 1; i <= n ; i++) {
+                sum = sum + i
+            }
+            document.write(`1 ~ ${n} 까지의 총합 : ${sum} <br>`)
+        }
+
+        total(7)
+        
+
+        document.write("<hr>")
+
+        
+        // N ~ M 까지의 총합
+        // M이 N보다 큰 경우 자리를 바꿔서 총합 구하는 total2 함수 만들기
+        // ex) 1 ~ 5 까지의 합이랑 5 ~ 1 까지의 합이 같아야 함
+
+        function total2 (n, m) {
+            let sum2 = 0 // 총합을 담을 변수
+                if(n < m) {
+                    for(let i = n; i <= m ; i++) {
+                        sum2 = sum2 + i
+                }
+                document.write(`${n} ~ ${m} 까지의 총합 : ${sum2} <br>`)
+            } else if (m > n) {
+                for(let i = n; i <= m ; i++) {
+                        sum2 = sum2 + i
+                }
+            } document.write(`${m} ~ ${n} 까지의 총합 : ${sum2} <br>`)
+        }
+
+        total2 (1, 6)
+
+
+
+        document.write("<hr>")
+
+
+
+        // 숫자들이 담긴 배열을 매개변수로 받아, 배열 내 최대값을 반환하는
+        // max_arr 함수 만들기
+
+        function max_arr (a,b,c,d,e) {
+            
+            let arr = new Array() // 빈 배열 생성
+            arr = [a,b,c,d,e] // 매개변수로 배열 채우기
+
+            let max = Math.max.apply(null, arr) // 최대값을 담아줄 변수
+            return max;
+        }
+
+        document.write("배열 내 최대값 :",max_arr(1,2,3,4,5), "<br>")
+
+
+        document.write("<hr>")
+        
+
+        // 문자열 뒤집기
+        // 문자열을 매개변수로 받아 해당 문자열을 뒤집어 반환하는
+        // 함수 reverse 만들기
+
+        // 함수의 선언은 공식을 세운다
+        function reverse(s) {
+            let str = s;
+            let reversed = "";
+
+            for(let i = str.length -1 ; i >= 0 ; i--) { // i = str.length -1 : 마지막 문자열부터 시작
+                reversed += str[i]; 
+            }
+
+            document.write(reversed); // 뒤집힌 문자열이 담긴 reversed 변수
+        }
+
+        reverse("반갑습니다")
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

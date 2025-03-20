@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex12_function</title>
+    <script>
+        // 함수(function)
+        // 자주 사용하는 명령들을 하나로 모아 재사용할 수 있게 만들어 놓은 것
+        
+        // function 함수명 () {
+        //     자주 사용하는 명령들
+        //     return 반환값;
+        //  }
+
+        function square (x) { // 매개변수
+            // 제곱하기 기능
+            let result = x * x; // result -> 지역변수, 이 함수 안에서만 사용가능한 변수
+            return result; // 지역변수인 result를 꺼내줄 수 있는 게(반환) 바로 'return'
+        }
+
+        // square : 함수명
+        // x : 매개변수
+        // let result = x * x; : 처리 로직
+        // return result; : 처리 후 반환값
+
+        // 함수의 호출
+        // 함수는 함수명() 를 통해 호출한다
+        document.write(square(4), '<br>'); //16
+
+        
+        document.write("<hr>")
+
+
+        // 매개변수 : 외부에서 값을 입력 받아야 하는 경우 만드는 변수
+        // 필요 없으면 안 쓸 수도 있고, 여러 개가 필요하면
+        // 쉼표를 구분으로 여러 개를 쓸 수도 있다.
+
+
+        // 1. 매개변수도 있고 반환값도 있는 경우
+        // 두 수를 더하여 반환하는 add함수 만들기
+        function add (a, b) {
+            let add = a + b;
+            return add;
+        }
+
+        // 결과 출력하기
+        document.write(add(10, 7), '<br>'); // 17
+
+
+
+        // 2. 매개변수는 있지만 반환값은 없는 경우
+        function multi (x, y) {
+            let result = x * y;
+            console.log(result);
+            // 연산 결과가 함수 외부에서 필요하지 않을 때
+            // return 은 생략 가능하다
+        }
+        // 함수 호출
+        multi(8,9);
+
+
+
+        // 3. 매개변수는 없고 반환값은 있는 함수
+        function sayHello () { // 외부에서 값을 전달할 게 없음
+            return "안녕하세요!"; // 반환값O, 화면에 보이진 않음
+        }
+        // 함수의 호출 
+        sayHello();
+
+
+
+        // 4. 매개변수도 없고 반환값도 없는 경우
+        function f () { // 외부에서 값을 전달할 게 없음
+            alert('함수호출');
+        }
+        // 함수의 호출 
+        f();
+
+
+
+
+        // 매개변수의 여부는 외부에서 값을 전달 받아야 하는 경우로 갈림
+        // 반환값의 여부는 함수 밖으로 보내야 할 지 말지 경우로 결정
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

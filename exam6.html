@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exam6</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .wrap {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .wrap > #gallery {
+            position: relative;
+            width: 350px;
+            height: 250px;
+        }
+        
+    </style>
+    <script>
+        let num = 1
+        let path = "image/image/img";
+
+        prev = () => {
+            num--;
+            if(num < 1){
+                num = 7;
+            }
+            //img태그의 src에 들어있는 경로를 수정
+            let prev_img = document.querySelector("#gallery");
+            prev_img.src = `${path+num}.jpg`
+        }
+
+        next = () => {
+            
+        }
+    
+
+        // setInterval();
+        // // 각 호출 사이에 고정된 시간으로 함수를 반복적으로 호출할 수 있다.
+        // // 1000ms가 1초이다
+
+    </script>
+</head>
+<body>
+    <div class="wrap">
+        <a href="#" onclick="prev()"> <!-- 클릭하기 위해 <a> 태그를 이용 -->
+            <img src="image/image/left_btn.png" id="btn" alt="이전">
+        </a>
+            <img src="image/image/img6.jpg" id="gallery">
+            
+        <a href="#" onclick="next()">
+            <img src="image/image/right_btn.png" id="btn" alt="다음">
+        </a>
+    </div>
+</body>
+</html>

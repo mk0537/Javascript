@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exam5</title>
+    <style>
+        input {
+            border: none;
+        }
+
+        #td {
+            padding: 30px;
+            padding-left: 35px;
+        }
+
+       #td > button {
+        width: 30px;
+        height: 30px;
+       }
+        
+    </style>
+    <script>
+        let func1 = dan => {
+            if (dan < 10, dan > 1) {
+                let dansu = document.querySelector('#text1'); // 기준이 되는 단 
+                for(let i = 1; i < 10; i++) {
+                document.write(`${dansu}X${i}=${dansu*i}<br>`)
+                }
+            } else if (dansu < 1, dansu > 10) {
+                document.querySelector('#btn1').func2()
+            } else {
+                document.querySelector('#btn1').func1()
+            }
+            
+            }
+
+
+        let func2 = (op) =>{
+            let su1 = parseInt(document.querySelector('#su1').value); // querySelector('#text2').value : 문자열
+            let su2 = parseInt(document.querySelector('#su2').value); // querySelector('#text3').value : 문자열
+            let result = document.querySelector('#m_div');
+
+            if (op === '+') {
+                result.value = su1 + su2;
+            } else if(op === '-') {
+                result.value = su1 - su2;
+            } else if(op === '*') {
+                result.value = su1 * su2;
+            } else if(op === '/') {
+                result.value = su1 / su2;
+            }
+
+        }
+
+        
+    </script>
+</head>
+<body>
+        단 : <input id="text1" > <input type="button" value="계산시작" onclick="func1()" >
+    <hr>
+    <div id="d_div">
+
+    </div>
+
+    <hr>
+    <!-- 계산기 만들기 -->
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>수1</th>
+                <th><input id="su1" ></th>
+            </tr>
+            <tr>
+                <th>수2</th>
+                <th><input id="su2" ></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td id="td" colspan="4">
+                    <button id="button1" onclick="func2('+')">+</button>
+                    <button id="button2" onclick="func2('-')">-</button>
+                    <button id="button3" onclick="func2('*')">*</button>
+                    <button id="button4" onclick="func2('/')">/</button>
+                </td>
+
+            </tr>
+        </tbody>
+        <thead>
+            <tr>
+                <th>결과</th>
+                <th>
+                    <input id="m_div" readonly>
+                </th>
+            </tr>
+        </thead>
+     </table>
+</body>
+</html>

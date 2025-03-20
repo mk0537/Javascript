@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex04_operator</title>
+    <script>
+        // 산술 연산자
+        let num1 = 10;
+        let num2 = 7;
+
+        document.write("num1 + num2 = " + (num1+num2)+"<br>");
+        document.write("num1 - num2 = " + (num1-num2)+"<br>");
+        document.write("num1 * num2 = " + (num1*num2)+"<br>");
+        document.write("num1 / num2 = " + (num1/num2)+"<br>"); //1.4285
+        document.write("num1 % num2 = " + (num1%num2)+"<br>"); //3
+
+        document.write("num1 : ",num1,"<br>");
+        document.write("num2 : ",num2,"<br>");
+
+        //문자 결합 연산자
+        //여러개의 문자를 하나의 문자형 데이터로 결합할 때 사용
+        //더하기에 피연산자로 문자형 데이터가 한 개라도 포함되어 있으면
+        //다른 피연산자의 데이터는 자동으로 문자형 데이터로 변환되고
+        //문자 결합이 이루어져 하나의 문자형 데이터가 된다.
+
+        document.write("<hr>")
+
+        document.write("Text1 " + "Text2<br>")
+        document.write("100"+200,"<br>")
+        document.write(100+"200","<br>")
+
+
+        // 대입 연산자
+        // 우변에 값을 죄변에 대입해주는 연산자
+        // =
+
+        // 복합 대입 연산자 : 기존 식에 누적
+        let str = "<table border='1'>";
+        str += "<tr>"; // str = "<table border='1'>" + "<tr>"
+        str += "<td>1</td><td>2</td><td>3</td>"; // str = "<table border='1'>" + "<tr>" + "<td>1</td><td>2</td><td>3</td>"
+        str += "</tr>"; 
+        str += "</table>";
+
+        document.write(str);
+
+        document.write("<hr>");
+        
+        // 증감 연산자
+        // 숫자형 데이터를 1씩 증가하거나 감소하는 역할
+        // ++, --
+        // n1 += 1; -> n1 = n1 + 1;
+
+
+        // 선행 증감 연산자
+        // ++변수, --변수
+        
+        let n1 = 5;
+        let n2 = ++n1; // 증감 연산이 일어난 후 대입이 진행됨
+        document.write("n2 : ",n2,"<br>"); // n2 : 6
+
+
+        // 후행 증감 연산자
+        // 변수++ , 변수--
+
+        let n3 = 5;
+        let n4 = n3++; // 대입이 일어난 후 증감 연산이 진행됨
+        document.write("n4 : ",n4,"<br>"); // n4 : 5
+        document.write("n3 : ",n3,"<br>"); // n3 : 6
+
+        let x = 3, y = 3;
+        let z = x++ + ++y; // 여기서 x 와 y 는 이미 증감 됨
+
+        document.write("x : "+x+"<br>"); // x : 4
+        document.write("y : "+y+"<br>"); // y : 4
+        document.write("z : "+z+"<br>"); // 3+4, y : 7 
+
+        
+        document.write("<hr>");
+
+
+        // 비교 연산자
+        // 두 개의 데이터를 '크다', '작다', '같다' 와 같이 비교할 때 사용
+        // 연산된 결과는 논리형 데이터로 돌려준다.
+
+        let a = "10", b = 10; // 데이터 타입이 다름
+        let result = a > b; // 초과
+        document.write("a > b : "+result+"<br>");
+        result = a < b; // 미만
+        document.write("a < b : "+result+"<br>");
+        result = a >= b; // 이상
+        document.write("a >= b : "+result+"<br>");
+        result = a <= b; // 이하
+        document.write("a <= b : "+result+"<br>");
+        // == : 데이터 타입 신경 안 씀
+        result = a == b;
+        document.write("a == b : "+result+"<br>"); // true 로 나옴 : 타입 상관 없음
+        // === : 데이터 타입 신경 씀
+        result = a === b;
+        document.write("a === b : "+result+"<br>");
+        // != : 데이터 타입 신경 안 씀
+        result = a != b; 
+        document.write("a != b : "+result+"<br>");
+        // !== : 데이터 타입 신경 씀
+        result = a !== b; 
+        document.write("a !== b : "+result+"<br>");
+        
+
+        document.write("<hr>");
+
+
+        // 논리 연산자
+        // 논리형 데이터 두 개를 가지고 연산
+
+        // 1. 이항 연산자 : 피연산자가 두 개
+        // || (or) : 둘 중 하나라도 맞으면 참
+        // T || T -> T
+        // T || F -> T
+        // F || T -> T
+        // F || F -> F
+
+        // &&(AND) : 둘 다 맞아야 참
+        // T && T -> T
+        // T && F -> F
+        // F && T -> F
+        // F && F -> F
+
+
+        // 2. 단항 연산자 : 피연산자가 한 개
+        // !(NOT) : ~이 아니다
+        // !T -> F
+        // !F -> T
+
+        x = 10, y = 7;
+        result = x > y && x != y;
+        document.write("result : " + result + "<br>")
+        document.write("result : " + !result + "<br>")
+
+
+        document.write("<hr>");
+
+        // 3. 삼항 조건 연산자
+        // 참일 때 실행할 명령, 거짓일 때 실행할 명령이 있는 연산자
+        // 형태 : ' 참 or 거짓 ? 참일 때 실행할 명령 : 거짓일 때 실행할 명령'
+
+        result = x > y ? "x는 y 보다 큽니다" : "x는 y 보다 작습니다"
+        document.write("결과 : " + result + "<br>")
+
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex03_variable</title>
+    <script>
+        
+        // 변수를 만드는 법(변수의 선언)
+        // 1. 키워드 변수명; -> 빈 그릇만 만듬 (변수명 -> 이름표)
+        // 2. 키워드 변수명 = 데이터; -> 빈 그릇을 만들면서 물도 같이 넣음
+        
+        // 변수의 대입
+        // 변수명 = 새로운 데이터; ('우변'에서 '좌변'로 '대입')
+    
+        // 키워드
+        // var : 같은 이름의 변수가 만들어졌을 때 감지하지 못한다. (에러가 안 난다, 덮어쓰기가 되어버림)
+        // let : 같은 이름의 변수가 만들어졌을 때 감지한다. (에러가 난다.)
+        //   ㄴ 새로운 값은 대입할 수 있다.
+        // const : 같은 이름의 변수가 만들어졌을 때 에러가 난다. 대입 불가능
+
+        // 변수명 짓는 규칙
+        // 1. 첫 글자로 영문자 (a~z, A~Z), 밑줄(_) 달러 기호($)로 시작해야 한다. 숫자X
+        // 2. 대소문자로 구별한다(home, Home)
+        // 3. 공백이나 특수문자 포함 X
+        // 4. 예약어 사용 불가(if, form while, const 등) 자바스크립트에서 이미 사용중인 예약어는
+        //    변수명으로 사용 불가
+        // 5. 한글 절대 쓰지 않기
+        
+        // 권장사항
+        // 의미있는 이름으로 짓기 ex) 나이 -> age, 주소 -> adress
+        
+        // < 변수명 표기법 >
+        // Camel Case (낙타 표기법) : 첫 단어는 소문자로 시작하고, 다음 단어부터는 대문자로 시작
+        //   ㄴ ex) homeAdress, totalScore, myAge
+
+        // Snake Case (스네이크 표기법) : 단어 사이에 밑줄(_)로 연결하는 규칙
+        // ㄴ ex) home_adress, total_score, my_age
+
+        // Pascal Case (파스칼 표기법) : 모든 단어의 첫 글자를 대문자로 시작
+        // ㄴ ex) HomeAdress, TatalScore, MyAge
+
+        // 헝가리 표기법 : 변수명을 지을 때 데이터의 타입이나 의미를 나타내는 접두사를 붙인다
+        // ㄴ ex) nCount, sData, aString
+
+
+        // 변수를 사용하여 데이터를 관리하면 재사용성에 매우 유리하다.
+        let n1 = 15;
+        document.write("n1:"+n1+"<br>");//출력
+
+        let s1 = "홍길동";
+        document.write(s1+"<br>"); //문자열 출력
+
+        let n2 = 10;
+        // 데이터의 타입이 다를 때 +기호는 '연결'의 의미를 갖는다.
+        document.write("n2:"+n2+"<br>");
+        
+        // 데이터의 타입이 같을 때 +기호는 '연산'의 의미를 갖는다.
+        document.write(n1+n2+"<br>");
+
+        document.write("15+10"+1+1+"<br>"); // 15+1011 : 문자 타입으로 시작했기 때문에 뒤에도 문자열로 취급
+        document.write("15+10="+(15+10)+"<br>"); // 15+10=25 : 계산을 먼저 하고 싶으면 괄호로 묶어야 함 
+
+
+        let n3; // 비어있는 그릇 생성
+        
+        // 변수의 값이 할당되지 않았을 때 자동으로 undefinred가 할당된다
+        document.write(n3+"<br>");
+
+        // n3 에 3.14 대입
+        n3 = 3.14;
+        document.write(n3+"<br>");
+
+        // 연산한 값을 변수에 대입할 수도 있다.
+        let sum = n1 + n2;
+
+        let name = "홍길동";
+        let age = 45;
+        let adress = "인천시 부평구";
+        let height = 184.5;
+
+        document.write("이름 : "+name+"<br>");
+        document.write("나이 : "+age+"<br>");
+        document.write("주소 : "+adress+"<br>");
+        document.write("키 : "+height+"<br>");
+        
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex13_function_2</title>
+    <script>
+
+        // 함수 -> 혼자 호출 가능 : 함수()
+        // 메서드 -> 만드시 객체와 함께 사용 : 객체.메서드
+
+
+        // 1. eval() : 문자열로 표현된 자바스크립트 코드를 실행시키는 함수
+        let x = 10, y =20;
+        let a = eval("x+y");
+        let b = eval("y*3");
+        console.log(a);
+        console.log(b);
+
+        // 2. isFinite() : 매개변수로 전달된 값이 유한한 수인지 검사하여 결과를 반환한다.
+        // 유한하면 true, 무한하면 false
+        console.log(isFinite(123));
+        console.log(isFinite(123e100));
+        console.log(isFinite("123")); // 인수로 전달된 값이 숫자가 아니면, 숫자로 변환함
+        console.log(isFinite("문자열")); // 숫자가 아닌 문자열 -> false
+        console.log(isFinite(undefined)); //false
+        console.log(isFinite(true)); //true
+
+
+        // 3. isNaN() : 매개변수로 전달된 값이 NaN(숫자인지 아닌지)인지 검사하여 반환
+        // 인수로 전달된 값이 숫자가 아니면 숫자로 변환한다
+        // 숫자가 아니면 true, 숫자이면 false
+        console.log(isNaN(123)) //false
+        console.log(isNaN("123")) // false 숫자취급
+        console.log(isNaN("문자열")) // true
+
+
+        // 4. parseFloat() : 문자열을 읽어서(파싱) 실수(숫자)로 반환
+        console.log(parseFloat("123")) //123
+        console.log(parseFloat("123.000")) //123
+        console.log(parseFloat("123.456")) //123.456
+
+
+        // 5. parseInt() : 문자열을 읽어서(파싱) 정수(숫자)로 반환
+        console.log(parseInt("123")) //123
+        console.log(parseInt("123.000")) //123
+        console.log(parseInt("123.456")) //123
+
+        // 두번째 인자로 특정 진법을 전달하면 해당 진법에 맞는 정수로 반환함
+        console.log(parseInt("10", 10)) // 10을 10진수로 바꿔라
+        console.log(parseInt("10", 8)) // 10을 8진수로 바꿔라
+        console.log(parseInt("10", 2)) // 10을 2진수로 바꿔라
+
+
+        // 6. encodeURI() : URI에서 주소를 표시하는 특수문자를 제외하고, 모든 문자를
+        // 이스케이프 시퀀스 처리하여 부호화한다.
+        // uri : 주소 + 데이터
+        // "http://google.com/search.php?name=홍길동&city=서울";
+        let uri = "http://google.com/search.php?name=홍길동&city=서울";
+        let enc1 = encodeURI(uri);
+        console.log(enc1); 
+        let enc2 = encodeURIComponent(uri); // 전부 특수문자로 바꿔버림
+        console.log(enc2);
+
+
+
+        // 자바 스크립트에서 제공하는 객체와 메서드 (사용법 : 객체.메서드)
+        // 1. Math -> 객체
+        // (1) Math.random() : 0과 1 사이의 난수를 제공 -> 메서드
+        let random = Math.random()*45 + 1;
+        console.log(random)
+
+        // (2) Math.floor() : 소수점 내림(1의 자리 수부터 다 버림)
+        console.log(Math.floor(random))
+
+        // (3) Math.ceil() : 올림
+        console.log(Math.ceil(random))
+
+        // (4) Math.round : 반올림
+        console.log(Math.round(random))
+
+        // (5) Math.max() : 최대값 찾기
+        console.log(Math.max(1,2,3,4,5))
+        
+        // (6) Math.min() : 최소값 찾기
+        console.log(Math.min(1,2,3,4,5))
+
+        // (7) Math.pow() : 거듭제곱 수행
+        console.log(Math.pow(2,3))
+
+        // (8) Math.sqrt() : 제곱근 계산
+        console.log(Math.sqrt(9)) // 3
+
+        // (9) Math.abs() : 절대값 구하기
+        console.log(Math.abs(-5))
+
+        // (7) Math.pow() : 거듭제곱 수행
+        console.log(Math.pow(2,3))
+
+
+
+        // 문자열 관련 메서드 -> 반드시 객체와 함께 사용해야 !
+        // 1. indexOf() : 문자열 내에서 지정한 문자열의 첫 번째 인덱스를 반환
+        let str = "Hello, World" ;
+        console.log(str.indexOf("World"))
+        
+        // 2. lastIndexOf() : 문자열 내에서 지정한 문자열의 마지막 인덱스 값을 반환
+        console.log(str.lastIndexOf("l"))
+
+        // 3. includes() : 문자열에 특정 부분 문자열이 포함되어 있으면 true,
+        //                  포함되어 있지 않으면 false
+        console.log(str.includes("Hello"))
+
+        // 4. startsWith() : 문자열이 지정한 문자열로 시작하는지 확인
+        console.log(str.startsWith("Hello"))
+
+        // 5. slice() : 문자열의 일부를 잘라내어 새로운 문자열로 반환
+        console.log(str.slice(7,12)) // 인덱스 7 ~ 12
+
+        // 6. replace() : 문자열의 일부 내용을 새로운 문자열로 치환한 결과를 반환
+        // 6-1 replaceAll(바뀔 내용, 바꿀 내용) : 문자열 안의 내용을 전부 바꿔라
+        console.log(str.replace("World","JavaScript"))
+        let quiz = "n  i  c  e  t  o  m  e  e  t  y  o  u"
+        console.log(quiz.replaceAll('  ', ''))
+
+        // 7. concat() : 하나 이상의 문자열을 연결하여 새로 문자열을 만든다
+        let str1 = "Hello";
+        let str2 = "World";
+        console.log(str1.concat(", ",str2))
+
+        // 8. trim() : 문자열의 양 끝의 공백을 제거한 새로운 문자열을 반환
+        let strWithSpace= "          Hello, World   "
+        console.log(strWithSpace.trim());
+
+
+        let cArr = quiz.trim().split('  ');
+        console.log(cArr);
+
+        let answer = ''; // 빈 문자열 생성 -> 새로운 문자열을 담기 위해
+        for(let s of cArr) {
+            answer += s;
+        }
+        console.log(answer) //nicetomeetyou
+
+
+
+        // 9. split() : 문자열을 지정한 구분자로 나눠서 배열로 반환
+        str = "apple, banana, cherry"
+        console.log(str.split(','));
+
+        // 10. charAt() : 지정한 인덱스의 문자를 반환한다
+        console.log(str.charAt(0)); //a
+
+
+
+
+
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

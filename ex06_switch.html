@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex06_switch</title>
+    <script>
+        // switch 문
+        // if문과 비슷하지만 if문은 조건식이 들어가야 하는 반면
+        // switch 문은 비교값이 들어감
+        // switch (비교값) {
+        //    case 조건값1 :
+        //        비교값과 조건값1 이 일치할 때 실행할 명령;
+        //        break;
+        //    case 조건값2 :
+        //        비교값과 조건값2 이 일치할 때 실행할 명령;
+        //        break;
+        //    case 조건값3 :
+        //        비교값과 조건값3 이 일치할 때 실행할 명령;
+        //        break;
+        //    case 조건값4 :
+        //        비교값과 조건값4 이 일치할 때 실행할 명령;
+        //        break;
+        // }
+
+        n = 1;
+        switch(n) {
+            case 1 :
+                console.log('1. 게임하기');
+                break;
+            case 2 :
+                console.log('2. 쇼핑하기');
+                break;
+            case 3 :
+                console.log('3. TV 보기');
+                break;
+        }
+
+        // break 가 없는 switch 문 : 만나는 모든 명령을 실행하면서 내려간다. 
+        // 명령문 끝까지 실행, 끝까지 break가 없다면 switch 문을 빠져 나가버림
+        switch(n) { 
+            case 1:
+                console.log('n은 1입니다.');
+            case 2:
+                console.log('n은 2입니다.');
+            case 3:
+                console.log('n은 3입니다.');
+        }
+
+        // 모든 케이스가 하나의 명령을 공유하는 형태
+        switch(n) { 
+            case 1: case 2: case 3:
+                console.log('n은 공용입니다.');
+        }
+
+        // su1, su2 변수에 임의의 값으로 초기화한다.
+        // 산술연산자 기호 '+', '-', '*', '/', '%' 를 담아줄 수 있는 변수를 하나 만든다
+        // switch문을 이용하여 정수의 연산을 수행하는 코드 만들기
+        // 실행결과 :
+        // 10 * 7 = 70
+
+
+        let su1 = 10;
+        let su2 = 7; 
+        let a = su1 + su2;
+        let b = su1 - su2;
+        let c = su1 * su2;
+        let d = su1 / su2;
+        let e = su1 % su2;
+        let op = "*" // 입력 받는 값에 따라 결과물 출력을 위해 변수에 담음
+
+        switch(op) { 
+            case "+":
+                console.log(`${su1} + ${su2} = ${a}`);
+                break;
+            case "-":
+            console.log(`${su1} - ${su2} = ${b}`);
+                break;
+            case "*":
+                console.log(`${su1} * ${su2} = ${c}`);
+                break;
+            case "/":
+                console.log(`${su1} / ${su2} = ${d}`);
+                break;
+            case "%":
+                console.log(`${su1} % ${su2} = ${e}`);
+                break;
+        }
+
+
+
+        // 1 ~ 10 사이의 값을 변수에 담는다.
+        // 홀수인지 짝수인지 switch를 이용해서 판별하세요
+
+        let number = 5
+        let num = number % 2 
+        switch (num) {
+            case 0 :
+                console.log("짝수입니다.")
+                break;
+            case 1 :
+                console.log("홀수입니다.")
+                break;
+        }
+
+    </script> 
+</head>
+<body>
+    
+</body>
+</html>
